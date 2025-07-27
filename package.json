@@ -1,0 +1,45 @@
+// filename: package.json
+{
+  "name": "express-dynamodb-boilerplate",
+  "version": "1.0.0",
+  "description": "A production-ready boilerplate for Express.js with TypeScript and DynamoDB.",
+  "main": "dist/server.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "ts-node src/server.ts",
+    "dev": "nodemon src/server.ts",
+    "db:cli": "ts-node db/cli.ts",
+    "db:migrate": "npm run db:cli -- migrate:up",
+    "db:migrate:undo": "npm run db:cli -- migrate:down",
+    "db:migrate:create": "npm run db:cli -- migrate:create",
+    "db:seed": "npm run db:cli -- seed:run",
+    "db:seed:create": "npm run db:cli -- seed:create"
+  },
+  "keywords": [
+    "express",
+    "typescript",
+    "nodejs",
+    "dynamodb",
+    "aws",
+    "serverless",
+    "boilerplate"
+  ],
+  "author": "Your Name",
+  "license": "ISC",
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.598.0",
+    "@aws-sdk/lib-dynamodb": "^3.598.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "yargs": "^17.7.2",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.14.2",
+    "@types/yargs": "^17.0.32",
+    "nodemon": "^3.1.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  }
+}
