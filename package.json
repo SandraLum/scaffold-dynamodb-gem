@@ -1,0 +1,27 @@
+{
+  "name": "scaffold-dynamodb-gem",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "dist/server.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "dev": "nodemon --watch \"./**/*.ts\" --exec ts-node server.ts",
+    "migrate": "ts-node db/migrate.ts",
+    "seed": "ts-node db/seed.ts"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "dotenv": "^16.3.1",
+    "@aws-sdk/client-dynamodb": "^3.470.0",
+    "@aws-sdk/lib-dynamodb": "^3.470.0",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22",
+    "typescript": "^5.2.2",
+    "ts-node": "^10.9.1",
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.8.4"
+  }
+}
