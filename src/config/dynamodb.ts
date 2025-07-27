@@ -1,0 +1,13 @@
+import { DynamoDBClient } from '@aws-sdk/client-dynamodb';
+import { DynamoDBDocumentClient } from '@aws-sdk/lib-dynamodb';
+import { config } from './index';
+
+/**
+ * Creates and exports a DynamoDB Document client.
+ */
+const client = new DynamoDBClient({
+  region: config.awsRegion,
+  endpoint: config.dynamoEndpoint,
+});
+
+export const ddb = DynamoDBDocumentClient.from(client);
